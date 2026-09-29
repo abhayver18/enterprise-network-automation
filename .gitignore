@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Credentials / secrets
+.env
+*.env
+secrets.yml
+credentials.yml
+credentials.yaml
+vault.yml
+*.pem
+*.key
+
+# Ansible
+*.retry
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
