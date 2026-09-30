@@ -1,0 +1,4 @@
+devices:
+  hq-edge:
+    host: 10.255.255.1
+    username: automation
