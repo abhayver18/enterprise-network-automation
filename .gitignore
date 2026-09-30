@@ -4,13 +4,18 @@ venv/
 __pycache__/
 *.pyc
 
-# Secrets
+# Credentials / secrets
 .env
+*.env
+secrets/
+credentials/
+secrets.yml
+credentials.yml
+credentials.yaml
+vault.yml
 *.pem
 *.key
 *.crt
-secrets/
-credentials/
 
 # Ansible
 *.retry
@@ -18,7 +23,10 @@ credentials/
 # Logs
 *.log
 
-# OS / IDE
-.DS_Store
+# IDE
 .vscode/
 .idea/
+
+# OS files
+.DS_Store
+Thumbs.db
