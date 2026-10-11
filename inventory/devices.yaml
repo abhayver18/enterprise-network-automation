@@ -1,4 +1,78 @@
+---
+defaults:
+  username: "automation"
+  password: "cisco"
+  secret: "cisco"
+  device_type: "cisco_ios"
+
 devices:
-  hq-edge:
-    host: 10.255.255.1
-    username: automation
+  # ==========================================
+  # Simulated Internet & HQ Enterprise Edge
+  # ==========================================
+  - hostname: "ISP-R1"
+    ip: "203.0.113.1"
+    config_file: "configs/golden/ISP-R1.cfg"
+
+  - hostname: "HQ-EDGE"
+    ip: "10.255.0.1"
+    config_file: "configs/golden/HQ-EDGE.cfg"
+
+  # ==========================================
+  # Bangalore HQ LAN & Core Infrastructure
+  # ==========================================
+  - hostname: "HQ-CORE1"
+    ip: "10.10.30.1"
+    config_file: "configs/golden/HQ-CORE1.cfg"
+
+  - hostname: "HQ-CORE2"
+    ip: "10.0.0.10"
+    config_file: "configs/golden/HQ-CORE2.cfg"
+
+  - hostname: "HQ-SW1"
+    ip: "10.10.30.11"
+    config_file: "configs/golden/HQ-SW1.cfg"
+
+  - hostname: "HQ-SW2"
+    ip: "10.10.31.12"
+    config_file: "configs/golden/HQ-SW2.cfg"
+
+  # ==========================================
+  # Service Provider / MPLS WAN Infrastructure
+  # ==========================================
+  - hostname: "SP-PE1"
+    ip: "172.16.0.2"
+    config_file: "configs/golden/SP-PE1.cfg"
+
+  - hostname: "SP-P1"
+    ip: "172.16.255.2"
+    config_file: "configs/golden/SP-P1.cfg"
+
+  - hostname: "SP-PE2"
+    ip: "172.16.255.3"
+    config_file: "configs/golden/SP-PE2.cfg"
+
+  - hostname: "SP-PE3"
+    ip: "172.16.255.4"
+    config_file: "configs/golden/SP-PE3.cfg"
+
+  # ==========================================
+  # Hyderabad Branch Office
+  # ==========================================
+  - hostname: "HYD-R1"
+    ip: "172.16.0.14"
+    config_file: "configs/golden/HYD-R1.cfg"
+
+  - hostname: "HYD-SW"
+    ip: "10.20.30.11"
+    config_file: "configs/golden/HYD-SW.cfg"
+
+  # ==========================================
+  # Pune Branch Office
+  # ==========================================
+  - hostname: "PUNE-R1"
+    ip: "172.16.0.22"
+    config_file: "configs/golden/PUNE-R1.cfg"
+
+  - hostname: "PUNE-SW"
+    ip: "10.30.30.11"
+    config_file: "configs/golden/PUNE-SW.cfg"
