@@ -1,0 +1,50 @@
+---
+defaults:
+  device_type: cisco_ios
+  username: automation
+  secret: cisco123
+  global_delay_factor: 1
+  fast_cli: false
+
+devices:
+  - hostname: SP-P1
+    host: 172.16.0.6
+    group: core_p
+    config_file: configs/SP-P1.cfg
+    role: core_transit
+    description: "MPLS Core LSR"
+
+  - hostname: SP-PE1
+    host: 172.16.100.2
+    group: provider_edge
+    config_file: configs/SP-PE1.cfg
+    role: provider_edge
+    description: "PE router facing HQ / Out-of-band ingress"
+
+  - hostname: SP-PE2
+    host: 172.16.0.10
+    group: provider_edge
+    config_file: configs/SP-PE2.cfg
+    role: provider_edge
+    description: "PE router terminating HYD-R1 (vrf ENTERPRISE)"
+
+  - hostname: SP-PE3
+    host: 172.16.0.18
+    group: provider_edge
+    config_file: configs/SP-PE3.cfg
+    role: provider_edge
+    description: "PE router terminating PUNE-R1 (vrf ENTERPRISE)"
+
+  - hostname: HYD-R1
+    host: 172.16.0.14
+    group: customer_edge
+    config_file: configs/HYD-R1.cfg
+    role: customer_edge
+    description: "Customer Branch CE - Hyderabad"
+
+  - hostname: PUNE-R1
+    host: 172.16.0.22
+    group: customer_edge
+    config_file: configs/PUNE-R1.cfg
+    role: customer_edge
+    description: "Customer Branch CE - Pune"

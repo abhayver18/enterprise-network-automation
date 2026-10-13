@@ -1,78 +1,51 @@
 ---
 defaults:
-  username: "automation"
-  password: "cisco"
-  secret: "cisco"
-  device_type: "cisco_ios"
+  device_type: cisco_ios
+  username: automation
+  password: cisco123
+  secret: cisco123
+  global_delay_factor: 1
+  fast_cli: false
 
 devices:
-  # ==========================================
-  # Simulated Internet & HQ Enterprise Edge
-  # ==========================================
-  - hostname: "ISP-R1"
-    ip: "203.0.113.1"
-    config_file: "configs/golden/ISP-R1.cfg"
+  - hostname: SP-P1
+    ip: 172.16.0.6
+    host: 172.16.0.6
+    group: core_p
+    config_file: configs/golden/SP-P1.cfg
+    role: core_transit
 
-  - hostname: "HQ-EDGE"
-    ip: "10.255.0.1"
-    config_file: "configs/golden/HQ-EDGE.cfg"
+  - hostname: SP-PE1
+    ip: 172.16.100.2
+    host: 172.16.100.2
+    group: provider_edge
+    config_file: configs/golden/SP-PE1.cfg
+    role: provider_edge
 
-  # ==========================================
-  # Bangalore HQ LAN & Core Infrastructure
-  # ==========================================
-  - hostname: "HQ-CORE1"
-    ip: "10.10.30.1"
-    config_file: "configs/golden/HQ-CORE1.cfg"
+  - hostname: SP-PE2
+    ip: 172.16.0.10
+    host: 172.16.0.10
+    group: provider_edge
+    config_file: configs/golden/SP-PE2.cfg
+    role: provider_edge
 
-  - hostname: "HQ-CORE2"
-    ip: "10.0.0.10"
-    config_file: "configs/golden/HQ-CORE2.cfg"
+  - hostname: SP-PE3
+    ip: 172.16.0.18
+    host: 172.16.0.18
+    group: provider_edge
+    config_file: configs/golden/SP-PE3.cfg
+    role: provider_edge
 
-  - hostname: "HQ-SW1"
-    ip: "10.10.30.11"
-    config_file: "configs/golden/HQ-SW1.cfg"
+  - hostname: HYD-R1
+    ip: 172.16.0.14
+    host: 172.16.0.14
+    group: customer_edge
+    config_file: configs/golden/HYD-R1.cfg
+    role: customer_edge
 
-  - hostname: "HQ-SW2"
-    ip: "10.10.31.12"
-    config_file: "configs/golden/HQ-SW2.cfg"
-
-  # ==========================================
-  # Service Provider / MPLS WAN Infrastructure
-  # ==========================================
-  - hostname: "SP-PE1"
-    ip: "172.16.0.2"
-    config_file: "configs/golden/SP-PE1.cfg"
-
-  - hostname: "SP-P1"
-    ip: "172.16.255.2"
-    config_file: "configs/golden/SP-P1.cfg"
-
-  - hostname: "SP-PE2"
-    ip: "172.16.255.3"
-    config_file: "configs/golden/SP-PE2.cfg"
-
-  - hostname: "SP-PE3"
-    ip: "172.16.255.4"
-    config_file: "configs/golden/SP-PE3.cfg"
-
-  # ==========================================
-  # Hyderabad Branch Office
-  # ==========================================
-  - hostname: "HYD-R1"
-    ip: "172.16.0.14"
-    config_file: "configs/golden/HYD-R1.cfg"
-
-  - hostname: "HYD-SW"
-    ip: "10.20.30.11"
-    config_file: "configs/golden/HYD-SW.cfg"
-
-  # ==========================================
-  # Pune Branch Office
-  # ==========================================
-  - hostname: "PUNE-R1"
-    ip: "172.16.0.22"
-    config_file: "configs/golden/PUNE-R1.cfg"
-
-  - hostname: "PUNE-SW"
-    ip: "10.30.30.11"
-    config_file: "configs/golden/PUNE-SW.cfg"
+  - hostname: PUNE-R1
+    ip: 172.16.0.22
+    host: 172.16.0.22
+    group: customer_edge
+    config_file: configs/golden/PUNE-R1.cfg
+    role: customer_edge
